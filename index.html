@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N's Game</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <div id="welcome-screen">
+            <h1>Welcome to the Word Guessing Adventure!</h1>
+            <p>Embark on a journey of discovery and test your knowledge across various exciting topics. Enter your name to begin the adventure!</p>
+            <input type="text" id="username-input" placeholder="Enter your name" />
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        <div id="topic-selection" style="display: none;">
+            <h2 id="welcome-message"></h2>
+            <h2>Select a Topic to Start Your Quest</h2>
+            <button onclick="selectTopic('countries')">Countries</button>
+            <button onclick="selectTopic('movies')">Movies</button>
+            <button onclick="selectTopic('animals')">Animals</button>
+            <button onclick="selectTopic('fruits')">Fruits</button>
+            <button onclick="selectTopic('sports')">Sports</button>
+            <button onclick="selectTopic('brands')">Brands</button>
+            <button onclick="selectTopic('colors')">Colors</button>
+            <button onclick="selectTopic('cities')">Cities</button>
+            <button onclick="selectTopic('foods')">Foods</button>
+        </div>
+        <div id="game" style="display: none;">
+            <h2 id="topic-title"></h2>
+            <p id="word-display"></p>
+            <input type="text" id="letter-input" maxlength="1" onkeypress="handleKeyPress(event)">
+            <button onclick="guessLetter()">Guess</button>
+            <button onclick="showHint()">Hint</button>
+            <p id="hint" style="display:none;"></p>
+            <p id="message"></p>
+            <p>Lives left: <span id="lives"></span></p>
+            <p id="used-letters"></p>
+            <p>Total Points: <span id="total-points">0</span></p>
+        </div>
+        <div id="high-scores" style="display: none;">
+            <h2>High Scores</h2>
+            <ul id="high-score-list"></ul>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
